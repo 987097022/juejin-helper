@@ -13,11 +13,8 @@ class Api {
    * }
    */
   getUser(cookie) {
-   return this.http({
-          method: 'get',
-          headers: {'cookie': cookie},
-        });
-//     return this.http.get('/user_api/v1/user/get')
+    this.http.defaults.headers.cookie = cookie
+    return this.http.get('/user_api/v1/user/get')
   }
 
   /**
