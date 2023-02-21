@@ -8,8 +8,8 @@ class Juejin extends Api {
   }
 
   async login(cookie) {
-    this.http.setCookie(cookie)
-    this.user = await this.getUser()
+//     this.http.setCookie(cookie)
+    this.user = await this.getUser(cookie)
   }
 }
 
