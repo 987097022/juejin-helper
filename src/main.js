@@ -3,7 +3,7 @@ const pushMessage = require('./utils/pushMessage.js')
 const { wait, getRandomArbitrary } = require('./utils/utils.js')
 const { COOKIE_ALL } = require('./ENV.js')
 
-const growth = {
+const equipment = {
     userName: '', // 用户名
     checkedIn: false, // 是否签到
     incrPoint: 0, // 签到获得矿石数
@@ -45,12 +45,12 @@ const main = async () => {
 
 async function loopDeal(COOKIE) {
     const juejin = new Juejin()
-
+    const growth = {...equipment}
     // 登录
     try {
         await juejin.login(COOKIE)
 
-        growth.userName = growth.userName + juejin.user.user_name
+        growth.userName = juejin.user.user_name
     } catch {
         throw new Error('登录失败, 请尝试更新 Cookies')
     }
