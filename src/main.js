@@ -50,7 +50,7 @@ async function loopDeal(COOKIE) {
     try {
         await juejin.login(COOKIE)
 
-        growth.userName = juejin.user.user_name
+        growth.userName = growth.userName + juejin.user.user_name
     } catch {
         throw new Error('登录失败, 请尝试更新 Cookies')
     }
