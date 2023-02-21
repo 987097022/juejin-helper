@@ -12,8 +12,12 @@ class Api {
    *   user_name: String 用户名
    * }
    */
-  getUser() {
-    return this.http.get('/user_api/v1/user/get')
+  getUser(cookie) {
+   return this.http({
+          method: 'get',
+          headers: {'cookie': cookie},
+        });
+//     return this.http.get('/user_api/v1/user/get')
   }
 
   /**
