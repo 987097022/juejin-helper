@@ -20,7 +20,7 @@ const equipment = {
     collectBugCount: 0, // 收集 Bug 的数量
 }
 
-const message = () => {
+const message = (growth) => {
     return `
 Hello ${growth.userName}
 ${growth.checkedIn ? `签到 +${growth.incrPoint} 矿石` : '今日已签到'}
@@ -120,7 +120,7 @@ async function loopDeal(COOKIE) {
 
     pushMessage({
         type: 'info',
-        message: message(),
+        message: message(growth),
     })
 }
 
