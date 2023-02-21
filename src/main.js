@@ -44,8 +44,8 @@ const main = async () => {
 }
 
 async function loopDeal(COOKIE) {
-    const juejin = new Juejin()
-    const growth = {
+    var juejin = new Juejin()
+    var growth = {
         userName: '', // 用户名
         checkedIn: false, // 是否签到
         incrPoint: 0, // 签到获得矿石数
