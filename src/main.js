@@ -1,7 +1,7 @@
 const Juejin = require('./juejin/index.js')
 const pushMessage = require('./utils/pushMessage.js')
 const { wait, getRandomArbitrary } = require('./utils/utils.js')
-const { COOKIE_YAN } = require('./ENV.js')
+const { COOKIE_YAN183 } = require('./ENV.js')
 
 const growth = {
   userName: '', // 用户名
@@ -40,7 +40,7 @@ const main = async () => {
 
   // 登录
   try {
-    await juejin.login(COOKIE_YAN)
+    await juejin.login(COOKIE_YAN183)
 
     growth.userName = juejin.user.user_name
   } catch {
