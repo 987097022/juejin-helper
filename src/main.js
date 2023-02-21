@@ -45,7 +45,22 @@ const main = async () => {
 
 async function loopDeal(COOKIE) {
     const juejin = new Juejin()
-    const growth = {...equipment}
+    const growth = {
+        userName: '', // 用户名
+        checkedIn: false, // 是否签到
+        incrPoint: 0, // 签到获得矿石数
+        sumPoint: 0, // 总矿石数
+        contCount: 0, // 连续签到天数
+        sumCount: 0, // 累计签到天数
+        dippedLucky: false, // 是否沾喜气
+        dipValue: 0, // 幸运值
+        luckyValue: 0, // 总幸运值
+        freeCount: 0, // 免费抽奖次数
+        freeDrawed: false, // 是否免费抽奖
+        lotteryName: '', // 奖品名称
+        collectedBug: false, // 是否收集 Bug
+        collectBugCount: 0, // 收集 Bug 的数量
+    }
     // 登录
     try {
         await juejin.login(COOKIE)
@@ -122,6 +137,8 @@ async function loopDeal(COOKIE) {
         type: 'info',
         message: message(growth),
     })
+    
+    juejin = null
 }
 
 main().catch(error => {
